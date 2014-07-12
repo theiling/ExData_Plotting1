@@ -1,4 +1,6 @@
 # Project 1
+# Set locale for english days
+Sys.setlocale(category = "LC_TIME", locale = "C")
 # Do download, if file does not exist.
 myfile <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
 if (!file.exists("household_power_consumption.zip")) {
