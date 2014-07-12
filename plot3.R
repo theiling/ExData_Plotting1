@@ -31,15 +31,6 @@ data2$dateTime <- paste(data2$Date, data2$Time)
 data2$dateTime <- strptime(data2$dateTime, "%d /%m/%Y %H:%M:%S")
 
 # Plot 3
-#with(data2, {plot(dateTime, Sub_metering_1,type ="l", lwd=1, xlab="", 
-#                  ylab = "Energy sub metering")
-#     lines(dateTime, Sub_metering_2, col ="red")
-#     lines(dateTime, Sub_metering_3, col="blue")
-#legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
-#       col =c("black","red", "blue"), 
-#       lty = 1, cex=0.8)
-#})
-
 png("plot3.png", units="px", height=480, width=480)
 with(data2,{plot(dateTime, as.numeric(as.character(Sub_metering_1)), type="l", xlab="", ylab="Energy sub metering")
 lines(dateTime, as.numeric(as.character(Sub_metering_2)), col="red")
@@ -47,6 +38,6 @@ lines(dateTime, as.numeric(as.character(Sub_metering_3)), col="blue")
 legend("topright", lty=1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3" ))
 })
 
-# Save plot as png-file
+# Save plot as png-file dev.copy() is not so exact. Therefore directly above added above
 #dev.copy(png,"plot3.png", units="px", height=480, width=480)
 dev.off()
